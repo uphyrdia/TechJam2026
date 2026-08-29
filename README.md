@@ -12,6 +12,6 @@ In command line, run
 
 `python3 detect_aigc.py --image_dir /path/to/the/image/folder`
 
-A JSON file will be generated, containing ``image_path`` and ``pred`` for each image.
+A JSON file will be generated, containing ``image_path`` and ``pred`` for each image, where ``pred`` is the confidence score that the image is AI-generated.
 ## Limitations and Future Enhancements
 ## Contributions
