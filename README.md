@@ -9,7 +9,9 @@ the post‑processing artifacts often encountered when images are shared on soci
 Download detect_aigc.py and aigc_detector.pth into the same folder and ensure Python3 is available.
 ## Reproducing the Results
 In command line, run
-``python3 detect_aigc.py --image_dir /path/to/the/image/folder``
-A JSON file will be generated, storing the the path to each image and the confidence score that the image is AI-generated.
+
+`python3 detect_aigc.py --image_dir /path/to/the/image/folder`
+
+A JSON file will be generated, containing ``image_path`` and ``pred`` for each image.
 ## Limitations and Future Enhancements
 ## Contributions
