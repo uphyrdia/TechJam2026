@@ -1,0 +1,54 @@
+{
+  "positive_class": "ai_generated",
+  "label_mapping": {
+    "0": "real",
+    "1": "ai_generated"
+  },
+  "score_meaning": "sigmoid(logit) = P(ai_generated)",
+  "decision_rule": "ai_generated if score >= 0.5",
+  "preprocessing": {
+    "resize": [
+      224,
+      224
+    ],
+    "color_mode": "RGB",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "training_method": "lightweight_STAL_style",
+  "training_data": {
+    "train_real_dir": "/home/utakata/LLMs/techjam2026/SID/real",
+    "train_fake_dir": "/home/utakata/LLMs/techjam2026/SID/ai",
+    "community_train_real_dir": "data/com/real",
+    "community_train_fake_dir": "data/com/ai",
+    "val_real_dir": "/home/utakata/LLMs/techjam2026/SID/test/real",
+    "val_fake_dir": "/home/utakata/LLMs/techjam2026/SID/test/full_synthetic",
+    "community_val_real_dir": "data/com/val/real",
+    "community_val_fake_dir": "data/com/val/ai"
+  },
+  "selected_epoch": 5,
+  "validation_metrics": {
+    "selection_score": 0.8681609630419331,
+    "sid_validation": {
+      "loss": 0.01593397390228506,
+      "balanced_accuracy": 0.994475,
+      "real_accuracy": 0.98905,
+      "fake_accuracy": 0.9999
+    },
+    "community_validation": {
+      "loss": 1.6993490595736827,
+      "balanced_accuracy": 0.7418469260838664,
+      "real_accuracy": 0.7969438521677328,
+      "fake_accuracy": 0.68675
+    }
+  },
+  "note": "The full STAL research implementation also uses local DCT and supervised contrastive losses."
+}
