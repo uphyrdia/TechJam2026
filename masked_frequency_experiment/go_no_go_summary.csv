@@ -1,0 +1,3 @@
+dataset,clean_auc,clean_ci_low,worst_degraded_variant,worst_degraded_auc,pilot_decision
+SID,0.5433589999999999,0.5165473,blur2_jpeg30,0.521773,NO-GO: cue is not yet stable enough
+CompEval,0.439365,0.41507035,jpeg_q60,0.43421099999999996,NO-GO: cue is not yet stable enough
