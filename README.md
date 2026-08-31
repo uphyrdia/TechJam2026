@@ -17,9 +17,7 @@ In summary, real-world transformations do affect the accuracy of our model (more
 
 Alternatives like a spatial-only CNN model or one fused with full 3-channel FFT with a four-layer transformer are also implemented, as in the folders ``spatial_only`` and ``rgb_fft_with_transformer``, but neither of them outperform fusing with radially averaged spectral cues, which is chosen not only because of better AUC and accuracy, but also because its inherent rotational robustness (since Fourier transform commutes with rotation).
 
-On the other hand, it turns out that Spectral Tail Auxiliary Learning is unlikely to help for our training dataset since the tail uplift does not actually exist for our dataset of AI-generated images and cannot differentiate AI-generated images from real images, as shown in ``archive_STAL``.
-
-Meanwhile, a preliminary experiment shows that the spectral learning method (that investigates conditional distribution of the spectra) implemented by SPAI: Spectral AI-Generated Image Detector is unlikely to improve the ROC for our dataset, as shown in ``masked_frequency_experiment``.
+On the other hand, it turns out that methods from [Spectral Tail Auxiliary Learning](https://arxiv.org/html/2605.22751v1) and [Any-Resolution AI-Generated Image Detection by Spectral Learning](https://arxiv.org/html/2411.19417v2) are not going to help for our training dataset as shown in ``archive_STAL`` and ``masked_frequency_experiment``, since, for example, the tail uplift does not actually exist for our dataset of AI-generated images.
 ## Setup
 Download the latest release and ensure Python3 and related packages and modules are installed.
 ## Reproducing the Results
