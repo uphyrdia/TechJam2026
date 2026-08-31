@@ -27,7 +27,7 @@ Unzip the release into a folder. Open terminal in the folder and run
 
 where ``--image_dir`` is compulsory and selects the directory of images to be analyzed, while ``--output_json`` is optional and by default ``predictions.json``.
 
-A JSON file called ``predictions.json`` will then be generated, containing ``image_path`` and ``pred`` for each image, where ``pred`` is the confidence score that the image is AI-generated.
+A JSON file will then be generated, containing ``image_path`` and ``pred`` for each image, where ``pred`` is the confidence score that the image is AI-generated.
 
 To reproduce the results shown earlier, download from the folder ``demo_data`` the three ``7z`` files. Unzip them and run ``detect.py`` with ``--image_dir`` followed by the directories of their unzipped folders.
 
