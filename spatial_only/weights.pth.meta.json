@@ -1,0 +1,78 @@
+{
+  "positive_class": "ai_generated",
+  "label_mapping": {
+    "0": "real",
+    "1": "ai_generated"
+  },
+  "score_meaning": "sigmoid(logit) = P(ai_generated)",
+  "decision_rule": "ai_generated if score >= 0.5",
+  "preprocessing": {
+    "resize": [
+      224,
+      224
+    ],
+    "color_mode": "RGB",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "model": {
+    "training_method": "spatial_only_supervised",
+    "backbone": "convnext_small",
+    "pretrained_initialization": "ImageNet-1K",
+    "frequency_branch": false,
+    "stal": false
+  },
+  "training_data": {
+    "train_real_dirs": [
+      "/home/utakata/LLMs/techjam2026/SID/real",
+      "/home/utakata/LLMs/techjam/data/com/real"
+    ],
+    "train_ai_dirs": [
+      "/home/utakata/LLMs/techjam2026/SID/ai",
+      "/home/utakata/LLMs/techjam/data/com/ai"
+    ],
+    "validation_names": [
+      "SID",
+      "CompEval"
+    ],
+    "validation_real_dirs": [
+      "/home/utakata/LLMs/techjam2026/SID/test/real",
+      "/home/utakata/LLMs/techjam/data/com/val/real"
+    ],
+    "validation_ai_dirs": [
+      "/home/utakata/LLMs/techjam2026/SID/test/full_synthetic",
+      "/home/utakata/LLMs/techjam/data/com/val/ai"
+    ]
+  },
+  "selected_epoch": 4,
+  "selection_metric": "roc_auc",
+  "validation_metrics": {
+    "selection_score": 0.8976241087375623,
+    "selection_metric": "roc_auc",
+    "validation": {
+      "SID": {
+        "loss": 0.025215453368783596,
+        "balanced_accuracy": 0.9932000000000001,
+        "real_accuracy": 0.98655,
+        "ai_accuracy": 0.99985,
+        "roc_auc": 0.9999817125
+      },
+      "CompEval": {
+        "loss": 1.9005573128192967,
+        "balanced_accuracy": 0.7460609985785358,
+        "real_accuracy": 0.7941719971570718,
+        "ai_accuracy": 0.69795,
+        "roc_auc": 0.7952665049751244
+      }
+    }
+  },
+  "inference_script": "detect.py"
+}

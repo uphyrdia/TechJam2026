@@ -1,0 +1,12 @@
+[
+  {
+    "image_path": "../data/others/7a698a49d25645ee802374209af0d6fe~tplv-3rqcfx17w1-watermark-en.jpg",
+    "pred": 1.6776709799160017e-06,
+    "ai_probability": 1.6776709799160017e-06,
+    "spatial_ai_probability": 1.412656365573639e-05,
+    "frequency_ai_probability": 0.2985389232635498,
+    "fusion_gate": 0.10539620369672775,
+    "predicted_label": 0,
+    "predicted_class": "real"
+  }
+]
